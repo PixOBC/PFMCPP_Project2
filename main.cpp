@@ -16,8 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
  
- 
- 
+int
+float
+double 
+bool
+char
+unsigned int
  
  
  
@@ -56,10 +60,35 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+
+    int rainDrops = 45;    
+    int cows = 100;
+    int planets = 8;
+
+    float numSamplesToRender = 56000.0f;
+    float decibelsToGain = 0.5f;
+    float ageOfMySonInYears = 3.5f;
+
+    double lightYearsToAlienLife = 123670978.454;
+    double slicesOfCakeLeftInMyHouse = 0.0002;
+    double percentageOfWheelsOnBrokenCar = 0.75;
+
+    bool rainToday = true;
+    bool rainedLastFriday = false;
+    bool rainTomorrow = 1;
+
+    char PlantInitial = 'O';
+    char mySurnameInitial = 'P';
+    char avgSchoolGrade = 'B';
+
+    unsigned int semiTonesInOctave = 12;
+    unsigned int sumTwoRandomValues = 24 + 10;
+    unsigned int major7 = 11;
 
     
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+
+    ignoreUnused(rainDrops, cows, planets, numSamplesToRender, decibelsToGain, ageOfMySonInYears, lightYearsToAlienLife, slicesOfCakeLeftInMyHouse, percentageOfWheelsOnBrokenCar,  rainToday, rainedLastFriday, rainTomorrow, PlantInitial, mySurnameInitial, avgSchoolGrade, semiTonesInOctave, sumTwoRandomValues, major7);
 }
 
 /*
@@ -75,42 +104,94 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+ char teleportLocationCodeLetter(int longitude, int latitude)
+ {
+     ignoreUnused(longitude, latitude);
+     return {};
+ } 
 
 /*
  2)
  */
+ float delayTimeInSamples(float delayTimeInSeconds = 0.5f, int sampleRate = 44100)
+ {
+     ignoreUnused(delayTimeInSeconds, sampleRate);
+     return {};
+ }
+
 
 /*
  3)
  */
+ double squareRoot(int numToSquare)
+ {
+     ignoreUnused(numToSquare);
+     return {};
+ }
 
 /*
  4)
  */
+ char postionInQueue(char lastNameInitial)
+ {
+    ignoreUnused(lastNameInitial);
+    return {};
+ }
 
 /*
  5)
  */
+ int daysLeftInTheYear(int daysInTheYearGone, int numDaysInThisYear = 365)
+ {
+    ignoreUnused(daysInTheYearGone, numDaysInThisYear);
+    return {};
+ }
 
 /*
  6)
  */
+ unsigned int yourAge(int yearOfBirth, int monthNumber, int year = 2021)
+ {
+    ignoreUnused();
+    return {};
+ }
 
 /*
  7)
  */
+ bool legalToDrink(int age, int countryCode)
+ {
+    ignoreUnused(age, countryCode);
+    return {};
+ }
 
 /*
  8)
  */
+ float fractionOfPieLeft(int numPieSlicesInWholePie, int pieSlicesEaten)
+ {
+    ignoreUnused(numPieSlicesInWholePie, pieSlicesEaten);
+    return {};
+ }
 
 /*
  9)
  */
+ bool metalDetected(bool isItemMetal, double weightOfItemInGrams)
+ {
+    ignoreUnused(isItemMetal, weightOfItemInGrams);
+    return {};
+ }
 
 /*
  10)
  */
+ double speedOfReentry(double atmosDensity, double heatOfVessel)
+ {
+    ignoreUnused();
+    return {};
+ }
+
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -125,7 +206,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 
  Wait for my code review.
  */
-
+ 
 int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
