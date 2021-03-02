@@ -75,9 +75,9 @@ void variableDeclarations()
 
     bool rainToday = true;
     bool rainedLastFriday = false;
-    bool rainTomorrow = 1;
+    bool rainTomorrow = false;
 
-    char PlantInitial = 'O';
+    char plantInitial = 'O';
     char mySurnameInitial = 'P';
     char avgSchoolGrade = 'B';
 
@@ -88,7 +88,7 @@ void variableDeclarations()
     
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
 
-    ignoreUnused(rainDrops, cows, planets, numSamplesToRender, decibelsToGain, ageOfMySonInYears, lightYearsToAlienLife, slicesOfCakeLeftInMyHouse, percentageOfWheelsOnBrokenCar,  rainToday, rainedLastFriday, rainTomorrow, PlantInitial, mySurnameInitial, avgSchoolGrade, semiTonesInOctave, sumTwoRandomValues, major7);
+    ignoreUnused(number, rainDrops, cows, planets, numSamplesToRender, decibelsToGain, ageOfMySonInYears, lightYearsToAlienLife, slicesOfCakeLeftInMyHouse, percentageOfWheelsOnBrokenCar, rainToday, rainedLastFriday, rainTomorrow, plantInitial, mySurnameInitial, avgSchoolGrade, semiTonesInOctave, sumTwoRandomValues, major7);
 }
 
 /*
@@ -152,7 +152,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  */
  unsigned int yourAge(int yearOfBirth, int monthNumber, int year = 2021)
  {
-    ignoreUnused();
+    ignoreUnused(yearOfBirth, monthNumber);
     return {};
  }
 
@@ -188,7 +188,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  */
  double speedOfReentry(double atmosDensity, double heatOfVessel)
  {
-    ignoreUnused();
+    ignoreUnused(atmosDensity, heatOfVessel);
     return {};
  }
 
@@ -206,34 +206,65 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 
  Wait for my code review.
  */
+
+/*
+ 5) in the main function at the end: 
+    for each of those functions declared, 
+        a) write out how the function would look if called with correct arguments
+        b) if the function returned anything, store it in a local variable via the 'auto' keyword.
+        c) pass the local variables to ignoreUnused() as you did in 2b)
+    see main() for an example of this.
+ 
+ 6) click the [run] button.  Clear up any errors or warnings as best you can.
+ */
+
  
 int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
     auto carRented = rentACar(6, 2); 
+    ignoreUnused(carRented);
     
     //1)
-    
+    auto teleportLocation = teleportLocationCodeLetter(27, 67);
+    ignoreUnused(teleportLocation);
     //2)
+    auto delayInTime = delayTimeInSamples();
+    ignoreUnused(delayInTime);
     
     //3)
+    auto squareRootIn = squareRoot(64);
+    ignoreUnused(squareRootIn);
     
     //4)
+    auto queuelist = postionInQueue('P');
+    ignoreUnused(queuelist);
     
     //5)
+    auto planner = daysLeftInTheYear(49); 
+    ignoreUnused(planner);   
     
     //6)
+    auto avatar = yourAge(1642, 11);
+    ignoreUnused(avatar);  
     
     //7)
+    auto ageTest = legalToDrink(18, 3);
+    ignoreUnused(ageTest);
     
     //8)
+    auto pieCalculation = fractionOfPieLeft(8, 2);
+    ignoreUnused(pieCalculation);
     
     //9)
+     auto possibleTreasure = metalDetected(true, 25.7);
+     ignoreUnused(possibleTreasure);
     
     //10)
+    auto rocketSafetyCheck = speedOfReentry(1.2, 1349);
+    ignoreUnused(rocketSafetyCheck);  
     
     
-    ignoreUnused(carRented);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
