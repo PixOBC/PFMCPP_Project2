@@ -152,7 +152,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  */
  unsigned int yourAge(int yearOfBirth, int monthNumber, int year = 2021)
  {
-    ignoreUnused(yearOfBirth, monthNumber);
+    ignoreUnused(yearOfBirth, monthNumber, year);
     return {};
  }
 
@@ -222,49 +222,44 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
-    auto carRented = rentACar(6, 2); 
-    ignoreUnused(carRented);
+    auto carRented = rentACar(6, 2);     
     
     //1)
     auto teleportLocation = teleportLocationCodeLetter(27, 67);
-    ignoreUnused(teleportLocation);
+
     //2)
     auto delayInTime = delayTimeInSamples();
-    ignoreUnused(delayInTime);
     
     //3)
     auto squareRootIn = squareRoot(64);
-    ignoreUnused(squareRootIn);
     
     //4)
     auto queuelist = postionInQueue('P');
-    ignoreUnused(queuelist);
+    
     
     //5)
-    auto planner = daysLeftInTheYear(49); 
-    ignoreUnused(planner);   
+    auto planner = daysLeftInTheYear(49);   
     
     //6)
     auto avatar = yourAge(1642, 11);
-    ignoreUnused(avatar);  
+    
     
     //7)
     auto ageTest = legalToDrink(18, 3);
-    ignoreUnused(ageTest);
     
     //8)
     auto pieCalculation = fractionOfPieLeft(8, 2);
-    ignoreUnused(pieCalculation);
+    
     
     //9)
      auto possibleTreasure = metalDetected(true, 25.7);
-     ignoreUnused(possibleTreasure);
+     
     
     //10)
-    auto rocketSafetyCheck = speedOfReentry(1.2, 1349);
-    ignoreUnused(rocketSafetyCheck);  
+    auto rocketSafetyCheck = speedOfReentry(1.2, 1349); 
     
-    
+    ignoreUnused(carRented, teleportLocation, delayInTime, squareRootIn, queuelist, planner, ageTest, avatar, pieCalculation, possibleTreasure, rocketSafetyCheck);
+
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
