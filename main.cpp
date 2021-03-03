@@ -16,8 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
  
- 
- 
+int
+float
+double 
+bool
+char
+unsigned int
  
  
  
@@ -56,10 +60,35 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+
+    int rainDrops = 45;    
+    int cows = 100;
+    int planets = 8;
+
+    float numSamplesToRender = 56000.0f;
+    float decibelsToGain = 0.5f;
+    float ageOfMySonInYears = 3.5f;
+
+    double lightYearsToAlienLife = 123670978.454;
+    double slicesOfCakeLeftInMyHouse = 0.0002;
+    double percentageOfWheelsOnBrokenCar = 0.75;
+
+    bool rainToday = true;
+    bool rainedLastFriday = false;
+    bool rainTomorrow = false;
+
+    char plantInitial = 'O';
+    char mySurnameInitial = 'P';
+    char avgSchoolGrade = 'B';
+
+    unsigned int semiTonesInOctave = 12;
+    unsigned int sumTwoRandomValues = 24 + 10;
+    unsigned int major7 = 11;
 
     
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+
+    ignoreUnused(number, rainDrops, cows, planets, numSamplesToRender, decibelsToGain, ageOfMySonInYears, lightYearsToAlienLife, slicesOfCakeLeftInMyHouse, percentageOfWheelsOnBrokenCar, rainToday, rainedLastFriday, rainTomorrow, plantInitial, mySurnameInitial, avgSchoolGrade, semiTonesInOctave, sumTwoRandomValues, major7);
 }
 
 /*
@@ -75,42 +104,94 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+ char teleportLocationCodeLetter(int longitude, int latitude)
+ {
+     ignoreUnused(longitude, latitude);
+     return {};
+ } 
 
 /*
  2)
  */
+ float delayTimeInSamples(float delayTimeInSeconds = 0.5f, int sampleRate = 44100)
+ {
+     ignoreUnused(delayTimeInSeconds, sampleRate);
+     return {};
+ }
+
 
 /*
  3)
  */
+ double squareRoot(int numToSquare)
+ {
+     ignoreUnused(numToSquare);
+     return {};
+ }
 
 /*
  4)
  */
+ char postionInQueue(char lastNameInitial)
+ {
+    ignoreUnused(lastNameInitial);
+    return {};
+ }
 
 /*
  5)
  */
+ int daysLeftInTheYear(int daysInTheYearGone, int numDaysInThisYear = 365)
+ {
+    ignoreUnused(daysInTheYearGone, numDaysInThisYear);
+    return {};
+ }
 
 /*
  6)
  */
+ unsigned int yourAge(int yearOfBirth, int monthNumber, int year = 2021)
+ {
+    ignoreUnused(yearOfBirth, monthNumber, year);
+    return {};
+ }
 
 /*
  7)
  */
+ bool legalToDrink(int age, int countryCode)
+ {
+    ignoreUnused(age, countryCode);
+    return {};
+ }
 
 /*
  8)
  */
+ float fractionOfPieLeft(int numPieSlicesInWholePie, int pieSlicesEaten)
+ {
+    ignoreUnused(numPieSlicesInWholePie, pieSlicesEaten);
+    return {};
+ }
 
 /*
  9)
  */
+ bool metalDetected(bool isItemMetal, double weightOfItemInGrams)
+ {
+    ignoreUnused(isItemMetal, weightOfItemInGrams);
+    return {};
+ }
 
 /*
  10)
  */
+ double speedOfReentry(double atmosDensity, double heatOfVessel)
+ {
+    ignoreUnused(atmosDensity, heatOfVessel);
+    return {};
+ }
+
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -126,33 +207,59 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  Wait for my code review.
  */
 
+/*
+ 5) in the main function at the end: 
+    for each of those functions declared, 
+        a) write out how the function would look if called with correct arguments
+        b) if the function returned anything, store it in a local variable via the 'auto' keyword.
+        c) pass the local variables to ignoreUnused() as you did in 2b)
+    see main() for an example of this.
+ 
+ 6) click the [run] button.  Clear up any errors or warnings as best you can.
+ */
+
+ 
 int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
-    auto carRented = rentACar(6, 2); 
+    auto carRented = rentACar(6, 2);     
     
     //1)
-    
+    auto teleportLocation = teleportLocationCodeLetter(27, 67);
+
     //2)
+    auto delayInTime = delayTimeInSamples();
     
     //3)
+    auto squareRootIn = squareRoot(64);
     
     //4)
+    auto queuelist = postionInQueue('P');
+    
     
     //5)
+    auto planner = daysLeftInTheYear(49);   
     
     //6)
+    auto avatar = yourAge(1642, 11);
+    
     
     //7)
+    auto ageTest = legalToDrink(18, 3);
     
     //8)
+    auto pieCalculation = fractionOfPieLeft(8, 2);
+    
     
     //9)
+     auto possibleTreasure = metalDetected(true, 25.7);
+     
     
     //10)
+    auto rocketSafetyCheck = speedOfReentry(1.2, 1349); 
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, teleportLocation, delayInTime, squareRootIn, queuelist, planner, ageTest, avatar, pieCalculation, possibleTreasure, rocketSafetyCheck);
+
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
